@@ -28,6 +28,16 @@ namespace GC_Final_Project.Models
             return metObj.objectID;
         }
 
+        //TODO: potential for returning entire object and have 
+        //public async Task<MetObject.Rootobject> GetMetObjectById(int id)
+        //{
+        //    var client = GetHttpClient();
 
+        //    var response = await client.GetAsync($"/public/collection/v1/objects/{id}");
+
+        //    var metObj = await response.Content.ReadAsAsync<MetObject.Rootobject>();
+
+        //    return metObj;
+        //}
     }
 }

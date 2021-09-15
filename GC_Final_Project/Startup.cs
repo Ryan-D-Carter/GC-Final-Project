@@ -1,7 +1,9 @@
+using GC_Final_Project.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,6 +22,10 @@ namespace GC_Final_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connection = "Server=mappsterpiecesserver.database.windows.net;Database=MappsterpiecesDB;Trusted_Connection=True;ConnectRetryCount=0;"; //TODO: change Trusted_Coneection to login details?
+            
+            services.AddDbContext<MappsterpiecesDBContext>(options => options.UseSqlServer(connection));
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
