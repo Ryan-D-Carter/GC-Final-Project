@@ -17,20 +17,7 @@ namespace GC_Final_Project.Models
         }
 
         //api/met/getObjById/{id}
-        public async Task<int> GetMetObjectById(int id)
-        {
-            var client = GetHttpClient();
-
-            var response = await client.GetAsync($"/public/collection/v1/objects/{id}");
-
-            var metObj = await response.Content.ReadAsAsync<MetObject.Rootobject>();
-
-            return metObj.objectID;
-        }
-
-
-        //TODO: potential for returning entire object and have 
-        //public async Task<MetObject.Rootobject> GetMetObjectById(int id)
+        //public async Task<int> GetMetObjectById(int id)
         //{
         //    var client = GetHttpClient();
 
@@ -38,13 +25,25 @@ namespace GC_Final_Project.Models
 
         //    var metObj = await response.Content.ReadAsAsync<MetObject.Rootobject>();
 
-        //    return metObj;
+        //    return metObj.objectID;
         //}
+
+        //TODO: potential for returning entire object and have
+        public async Task<MetObject.Rootobject> GetMetObjectById(int id)
+        {
+            var client = GetHttpClient();
+
+            var response = await client.GetAsync($"/public/collection/v1/objects/{id}");
+
+            var metObj = await response.Content.ReadAsAsync<MetObject.Rootobject>();
+
+            return metObj;
+        }
 
         //api/met/GetObjByMedium/{medium}
         public async Task<MetObject> GetMetObjsByMedium(string medium)
         {
-            
+
             var client = GetHttpClient();
 
             var response = await client.GetAsync($"public/collection/v1/search?hasImages=true&q={medium}&isOnView=true");
@@ -52,7 +51,7 @@ namespace GC_Final_Project.Models
             var metObjs = await response.Content.ReadAsAsync<MetObject>();
 
             return metObjs;
-            
+
         }
     }
 }
