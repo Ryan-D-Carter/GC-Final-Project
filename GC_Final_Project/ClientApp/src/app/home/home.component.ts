@@ -18,7 +18,7 @@ export class HomeComponent {
   */
 
 
-  listBySearchTerm: ListByMedium[] =[];
+  listBySearchTerm: ListBySearchTerm[] =[];
   dummySearchTerm: string = "painting"
 
   constructor(private metAPIservice: MetAPIService) { }
