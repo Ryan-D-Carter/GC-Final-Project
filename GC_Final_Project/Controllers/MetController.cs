@@ -1,4 +1,5 @@
 ﻿using GC_Final_Project.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace GC_Final_Project.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MetController : ControllerBase
@@ -15,7 +17,7 @@ namespace GC_Final_Project.Controllers
         private readonly MetObjectDAL _metObjectDAL = new MetObjectDAL();
 
         [HttpGet("getObjById/{id}")] //TODO: need / at beginning?
-        public async Task<ActionResult<int>> IndexAsync(int id)
+        public async Task<ActionResult<MetObject.Rootobject>> IndexAsync(int id)
         {
             var metObj = await _metObjectDAL.GetMetObjectById(id);
 
