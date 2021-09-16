@@ -22,6 +22,13 @@ namespace GC_Final_Project.Controllers
             return metObj;
         }
 
+        [HttpGet("GetObjByMedium/{medium}")]
+        public async Task<MetObject> GetObjByMedium(string medium)
+        {
+            var list = await _metObjectDAL.GetMetObjsByMedium(medium);
+
+            return list;
+        }
 
     }
 }
