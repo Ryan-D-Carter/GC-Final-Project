@@ -15,7 +15,7 @@ namespace GC_Final_Project.Controllers
         private readonly MetObjectDAL _metObjectDAL = new MetObjectDAL();
 
         [HttpGet("getObjById/{id}")] //TODO: need / at beginning?
-        public async Task<ActionResult<int>> IndexAsync(int id)
+        public async Task<MetObject.Rootobject> IndexAsync(int id)
         {
             var metObj = await _metObjectDAL.GetMetObjectById(id);
 
