@@ -26,9 +26,18 @@ namespace GC_Final_Project.Controllers
         }
 
         [HttpGet("GetObjByMedium/{medium}")]
-        public async Task<MediumList.Rootobject> GetObjByMedium(string medium)
+        //public async Task<MediumList.Rootobject> GetObjByMedium(string medium) TODO: changed to public async Task<MetObject> GetObjsByMedium(string medium)
+        public async Task<MetObject> GetObjsByMedium(string medium)
         {
             var list = await _metObjectDAL.GetMetObjsByMedium(medium);
+
+            return list; //TODO: TypeSpecific error
+        }
+
+        [HttpGet("likes/{visitor}")]
+        public IEnumerable<TheLike> GetLikes(Visitor visitor)
+        {
+            var list = _metObjectDAL.GetLikes(visitor);
 
             return list;
         }
