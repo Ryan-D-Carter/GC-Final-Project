@@ -24,7 +24,7 @@ namespace GC_Final_Project.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+// #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=mappsterpiecesserver.database.windows.net;Database=MappsterpiecesDB;User Id=mappsterpieces;Password=gNN=Mg9_R\"Vg6^Hm;");
             }
         }
@@ -46,10 +46,10 @@ namespace GC_Final_Project.Models
 
                 entity.Property(e => e.VisitorId).HasColumnName("VisitorID");
 
-                entity.HasOne(d => d.Visitor)
-                    .WithMany(p => p.TheLikes)
-                    .HasForeignKey(d => d.VisitorId)
-                    .HasConstraintName("FK__TheLikes__Depart__5EBF139D");
+         //////       entity.HasOne(d => d.Visitor)
+         //           .WithMany(p => p.TheLikes)
+         //           .HasForeignKey(d => d.VisitorId)
+         //           .HasConstraintName("FK__TheLikes__Depart__5EBF139D");
             });
 
             modelBuilder.Entity<Visitor>(entity =>

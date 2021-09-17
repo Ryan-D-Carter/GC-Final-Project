@@ -1,5 +1,5 @@
-import { Departments } from './../Departments';
-import { DepartmentAPIService } from './../department-api.service';
+import { Departments } from '../models/Departments';
+import { DepartmentAPIService } from '../services/department-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,28 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartmentSuggestionComponent implements OnInit {
 
-  departmentList: Departments[] = [];
-  deparmentSuggestion = ''; //will this be a string or a property?
+  // departmentList: Departments[] = [];
+  // deparmentSuggestion = ''; //will this be a string or a property?
 
-  constructor(private departmentService: DepartmentAPIService) { }
+  // constructor(private departmentService: DepartmentAPIService) { }
 
-  ngOnInit() {
-  }
+   ngOnInit() {
+   }
 
-  //get the list of departments (department name & count) by user
-  getDepartmentListByUser() {
-    this.departmentService.getDeparmentCountByUser().subscribe(
-      result => {
-        this.departmentList = result;
-        console.log(this.departmentList)
-      },
-      error => console.log(error)
-    )
-  }
+  // //get the list of departments (department name & count) by user
+  // getDepartmentListByUser() {
+  //   this.departmentService.getDeparmentCountByUser().subscribe(
+  //     result => {
+  //       this.departmentList = result;
+  //       console.log(this.departmentList)
+  //     },
+  //     error => console.log(error)
+  //   )
+  // }
 
-  calculateDepartment () {
-    //algorithm(s) to calculate which department has the highest count.
-  }
+  // calculateDepartment () {
+  //   //algorithm(s) to calculate which department has the highest count.
+  // }
 
 
 

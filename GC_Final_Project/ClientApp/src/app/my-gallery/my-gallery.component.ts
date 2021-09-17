@@ -1,6 +1,6 @@
-import { MyGalleryService } from './../my-gallery.service';
+import { MyGalleryService } from '../services/my-gallery.service';
 import { Component, OnInit } from '@angular/core';
-import { MyGallery } from '../MyGallery';
+import { MyGallery } from '../models/MyGallery';
 
 @Component({
   selector: 'app-my-gallery',
@@ -17,50 +17,50 @@ export class MyGalleryComponent implements OnInit {
   3) allow them to delete the entry --- function to delete, button to delete
   */
 
-  myGalleryList: MyGallery[] = [];
+  // myGalleryList: MyGallery[] = [];
 
 
-  constructor(private galleryService: MyGalleryService) { }
+  // constructor(private galleryService: MyGalleryService) { }
 
   ngOnInit() {
 
-    //show getGalleryByUser
-  }
+  //   //show getGalleryByUser
+   }
 
-  //get list of likes by user
-  getGalleryByUser (user: string) {
-    this.galleryService.getGalleryByUser(user).subscribe(
-      result => {
-        this.galleryService = result; // reg squiggle b/c the functions in the service aren't complete
-        console.log(this.myGalleryList)
-      },
-      error => console.log(error)
-    )
-  }
+  // //get list of likes by user
+  // getGalleryByUser (user: string) {
+  //   this.galleryService.getGalleryByUser(user).subscribe(
+  //     result => {
+  //       this.galleryService = result; // reg squiggle b/c the functions in the service aren't complete
+  //       console.log(this.myGalleryList)
+  //     },
+  //     error => console.log(error)
+  //   )
+  // }
 
-  //delete an item from their list of likes -- called when the user clicks "delete from my Gallery"
-  deleteGalleryItem (id: number): void {
-    this.galleryService.deleteGalleryItem(id).subscribe(
-      result => {
-        this.getGalleryByUser(user);
-        console.log(id);
-      },
-      error => console.log(error)
-    )
-  }
+  // //delete an item from their list of likes -- called when the user clicks "delete from my Gallery"
+  // deleteGalleryItem (id: number): void {
+  //   this.galleryService.deleteGalleryItem(id).subscribe(
+  //     result => {
+  //       this.getGalleryByUser(user);
+  //       console.log(id);
+  //     },
+  //     error => console.log(error)
+  //   )
+  // }
 
 
-  //edit an item from the list of likes
-  editGalleryItem () {
+  // //edit an item from the list of likes
+  // editGalleryItem () {
 
-  }
+  // }
 
-  
-  // when the user clicks the "I've visited button"
-  onMarkAsVisited (){
-    //change the bool to true & send that update to the API (editGalleryItem)
 
-  }
+  // // when the user clicks the "I've visited button"
+  // onMarkAsVisited (){
+  //   //change the bool to true & send that update to the API (editGalleryItem)
+
+  // }
 
 
 }
