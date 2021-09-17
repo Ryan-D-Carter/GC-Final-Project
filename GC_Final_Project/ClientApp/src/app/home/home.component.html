@@ -6,18 +6,23 @@
 
 <label for="cars">Choose a medium: </label>
 
-<select>
-  <option value="painting">Painting</option>
-  <option value="ceramic">Ceramics</option>
-  <option value="sculpture">Sculpture</option>
-  <option value="printing">Printmaking</option>
-  <option value="costumes">Costumes</option>
-  <option value="drawings">Drawings</option>
-  <option value="photographs">Photographs</option>
-  <option value="textiles">Textiles</option>
-  <option value="furniture">Furniture</option>
-  <option value="jewelery">Jewelery</option>
-</select>
-<button>Select</button>
+<form #SearchTermForm="ngForm" (ngSubmit)="submitSearchTerm(SearchTermForm)">
 
-<app-met-app></app-met-app>
+  <select>
+  <option *ngFor="let item of mediumArray" name="{{ item }}" ngModel >{{ item }}</option>
+  </select>
+  <button>Select</button>
+
+</form>
+
+<br />
+
+<img src="{{ metObj.primaryImage }}" style="width:500px;height:auto;">
+
+<p style="font-weight: bold;">{{ metObj.title }}</p>
+<p>{{ metObj.artistDisplayName }} </p>
+<p>{{ metObj.artistDisplayBio }} </p>
+
+<button>Ooooh!</button>
+<button>Not for me</button>
+
