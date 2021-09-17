@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using static GC_Final_Project.Models.MetObject;
 
 namespace GC_Final_Project.Models
@@ -52,6 +53,14 @@ namespace GC_Final_Project.Models
 
             return mediumList;
 
+        }
+
+        //api/met/likes/{user}
+        public IEnumerable<TheLike> GetLikes(Visitor visitor)
+        {
+            var client = GetHttpClient();
+
+            return visitor.TheLikes;
         }
     }
 }

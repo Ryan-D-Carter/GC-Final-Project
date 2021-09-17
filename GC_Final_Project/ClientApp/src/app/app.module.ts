@@ -31,7 +31,7 @@ import { MetAppComponent } from './met-app/met-app.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard]}, //added AuthorizeGuard
       { path: 'mygallery', component: MyGalleryComponent },
       { path: 'mysuggestion', component: DepartmentSuggestionComponent }
     ])
@@ -39,4 +39,4 @@ import { MetAppComponent } from './met-app/met-app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } //TODO: ....what?
