@@ -38,5 +38,15 @@ namespace GC_Final_Project.Controllers
             return list;
         }
 
+        //POST: api/met/addToLikes/{metOBJ}
+        [HttpPost]
+        public async Task<TheLike> AddLike(MetObject metOBJ)
+        {
+            if (ModelState.IsValid)
+            {
+                await _metObjectDAL.TheLike.AddAsync(metOBJ)
+            }    
+        }
+
     }
 }

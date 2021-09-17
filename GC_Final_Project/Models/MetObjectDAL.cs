@@ -62,5 +62,12 @@ namespace GC_Final_Project.Models
 
             return visitor.TheLikes;
         }
+
+        //api/met/addToLikes/{metOBJ}
+        public IEnumerable<TheLike> AddToLikes()
+        {
+            var client = GetHttpClient();
+            var response = await client.PostAsJsonAsync("/api/met/addToLikes",)
+        }
     }
 }
