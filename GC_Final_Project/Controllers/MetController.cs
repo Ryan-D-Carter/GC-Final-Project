@@ -26,7 +26,7 @@ namespace GC_Final_Project.Controllers
         }
 
         [HttpGet("GetObjByMedium/{medium}")]
-        public async Task<MetObject> GetObjByMedium(string medium)
+        public async Task<MediumList.Rootobject> GetObjByMedium(string medium)
         {
             var list = await _metObjectDAL.GetMetObjsByMedium(medium);
 
