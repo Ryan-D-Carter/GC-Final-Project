@@ -34,12 +34,6 @@ namespace GC_Final_Project.Controllers
             return list; //TODO: TypeSpecific error
         }
 
-        [HttpGet("likes/{visitor}")]
-        public IEnumerable<TheLike> GetLikes(Visitor visitor)
-        {
-            var list = _metObjectDAL.GetLikes(visitor);
-
-            return list;
-        }
+        
     }
 }
