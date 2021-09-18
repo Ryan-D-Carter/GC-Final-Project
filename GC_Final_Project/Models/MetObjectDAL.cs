@@ -55,12 +55,12 @@ namespace GC_Final_Project.Models
 
         }
 
-        //api/met/likes/{user}
-        public IEnumerable<TheLike> GetLikes(Visitor visitor)
-        {
-            var client = GetHttpClient();
+        ////api/met/likes/{user}
+        //public IEnumerable<TheLike> GetLikes(Visitor visitor)
+        //{
+        //    var client = GetHttpClient();
 
-            return visitor.TheLikes;
-        }
+        //    return visitor.TheLikes;
+        //}
     }
 }

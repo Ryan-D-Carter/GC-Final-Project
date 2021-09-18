@@ -4,25 +4,22 @@
 
 <p>To get started, please select which type of art you are most interested in seeing today:</p>
 
-<label for="cars">Choose a medium: </label>
-
-<form #SearchTermForm="ngForm" (ngSubmit)="submitSearchTerm(SearchTermForm)">
-
-  <select>
-  <option *ngFor="let item of mediumArray" name="{{ item }}" ngModel >{{ item }}</option>
-  </select>
-  <button>Select</button>
-
-</form>
 
 <br />
+<br />
 
-<img src="{{ metObj.primaryImage }}" style="width:500px;height:auto;">
+<!-- dropdown for search term - sends the value to submitSearchTerm method
+<select (change)="submitSearchTerm($event)">
+  <option value="default">select</option>
+  <option *ngFor="let item of searchTermArray" [value]="item">{{ item }}</option>
 
-<p style="font-weight: bold;">{{ metObj.title }}</p>
-<p>{{ metObj.artistDisplayName }} </p>
-<p>{{ metObj.artistDisplayBio }} </p>
+</select>
+<br />
+<br />
 
-<button>Ooooh!</button>
-<button>Not for me</button>
+<div *ngIf="display">
+  <app-met-app [listBySearchTerm]="listBySearchTerm" ></app-met-app>
+</div> -->
+
+<app-met-app></app-met-app>
 

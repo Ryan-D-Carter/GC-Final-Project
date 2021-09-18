@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MyGalleryComponent } from './my-gallery/my-gallery.component';
 import { DepartmentSuggestionComponent } from './department-suggestion/department-suggestion.component';
 import { MetAppComponent } from './met-app/met-app.component';
@@ -18,8 +16,6 @@ import { MetAppComponent } from './met-app/met-app.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     MyGalleryComponent,
     DepartmentSuggestionComponent,
     MetAppComponent
@@ -30,10 +26,11 @@ import { MetAppComponent } from './met-app/met-app.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard]}, //added AuthorizeGuard
+      //{ path: 'fetch-data', component: FetchDataComponent, //canActivate: [AuthorizeGuard]}, //added AuthorizeGuard
       { path: 'mygallery', component: MyGalleryComponent },
-      { path: 'mysuggestion', component: DepartmentSuggestionComponent }
+      { path: 'mysuggestion', component: DepartmentSuggestionComponent },
+      { path: 'metapp', component: MetAppComponent }
+
     ])
   ],
   providers: [],
