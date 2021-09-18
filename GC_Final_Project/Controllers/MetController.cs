@@ -35,11 +35,21 @@ namespace GC_Final_Project.Controllers
         }
 
         //[HttpGet("likes/{visitor}")]
-        //public IEnumerable<TheLike> GetLikes(Visitor visitor)
-        //{
-        //    var list = _metObjectDAL.GetLikes(visitor);
+        public IEnumerable<TheLike> GetLikes(Visitor visitor)
+        {
+            var list = _metObjectDAL.GetLikes(visitor);
 
-        //    return list;
-        //}
+            return list;
+        }
+
+        //POST: api/met/addToLikes/{metOBJ}
+        [HttpPost]
+        public async Task<TheLike> AddLike(MetObject metOBJ)
+        {
+            if (ModelState.IsValid)
+            {
+                var likedOjb = await _metObjectDAL.TheLike.AddAsync(metOBJ);
+            }    
+        }
     }
 }
