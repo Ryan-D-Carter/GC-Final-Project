@@ -32,7 +32,19 @@
 //        //    }
 //        //    return NotFound();
                     
-//        //}
-              
-//    }
-//}
+        }
+
+        [HttpPost("likes/{metObj}")]
+        public async Task<TheLike> GetLikes(MetObject metObj)
+        {
+
+
+            await _context.TheLikes.AddAsync(newLike);
+            await _context.SaveChangesAsync();
+    return CreatedAtAction(nameof());
+
+            
+        }
+
+    }
+}
