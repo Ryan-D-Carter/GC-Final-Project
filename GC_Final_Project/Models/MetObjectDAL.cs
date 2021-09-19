@@ -46,8 +46,8 @@ namespace GC_Final_Project.Models
         {
 
             var client = GetHttpClient();
-
-            var response = await client.GetAsync($"/public/collection/v1/search?hasImages=true&q={medium}&isOnView=true");
+            //Shelley - changed the string - added &medium=(medium) to make the searching function work better.
+            var response = await client.GetAsync($"/public/collection/v1/search?hasImages=true&q={medium}&isOnView=true&medium={medium}");
 
             var mediumList = await response.Content.ReadAsAsync<MediumList.Rootobject>();
 

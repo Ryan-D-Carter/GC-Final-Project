@@ -15,8 +15,8 @@ export class MetAppComponent implements OnInit {
   userSearchSelection: string = '';
   searchArray: number [] = [];
   searchTermArray: string[] = [
-       "painting", "ceramic","sculpture", "printing",  "costume", "drawings",
-       "photograph", "textile", "furniture", "jewelery"
+       "Paintings", "Ceramics", "Sculpture",
+       "Furniture"
      ];
   randomValue: number;
 
