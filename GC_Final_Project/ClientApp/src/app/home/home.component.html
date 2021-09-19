@@ -4,20 +4,22 @@
 
 <p>To get started, please select which type of art you are most interested in seeing today:</p>
 
-<label for="cars">Choose a medium: </label>
 
-<select>
-  <option value="painting">Painting</option>
-  <option value="ceramic">Ceramics</option>
-  <option value="sculpture">Sculpture</option>
-  <option value="printing">Printmaking</option>
-  <option value="costumes">Costumes</option>
-  <option value="drawings">Drawings</option>
-  <option value="photographs">Photographs</option>
-  <option value="textiles">Textiles</option>
-  <option value="furniture">Furniture</option>
-  <option value="jewelery">Jewelery</option>
+<br />
+<br />
+
+<!-- dropdown for search term - sends the value to submitSearchTerm method
+<select (change)="submitSearchTerm($event)">
+  <option value="default">select</option>
+  <option *ngFor="let item of searchTermArray" [value]="item">{{ item }}</option>
+
 </select>
-<button>Select</button>
+<br />
+<br />
+
+<div *ngIf="display">
+  <app-met-app [listBySearchTerm]="listBySearchTerm" ></app-met-app>
+</div> -->
 
 <app-met-app></app-met-app>
+

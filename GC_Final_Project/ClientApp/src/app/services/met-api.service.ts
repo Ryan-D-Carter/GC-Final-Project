@@ -12,14 +12,14 @@ export class MetAPIService {
 
   constructor(private http: HttpClient) { }
 
-  // READ get the list of objects by medium
-  getObjectListBySearchTerm(searchTerm: string) {
-    return this.http.get<ListBySearchTerm[]>(`${this.apiUri}/GetObjByMedium/${searchTerm}`)
-  }
+   // READ get the list of objects by medium
+   getObjectListBySearchTerm(searchTerm: string) {
+    return this.http.get<ListBySearchTerm>(`${this.apiUri}/GetObjByMedium/${searchTerm}`)
+   }
 
   //READ get the object details by Id
   getObjectById(objectId: number) {
-    return this.http.get<MetObjects[]>(`${this.apiUri}/getObjById/${objectId}`);
+   return this.http.get<MetObjects>(`${this.apiUri}/getObjById/${objectId}`);
   }
 
 }
