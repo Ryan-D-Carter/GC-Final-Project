@@ -44,7 +44,6 @@ namespace GC_Final_Project.Models
         //api/met/GetObjByMedium/{medium}
         public async Task<MediumList.Rootobject> GetMetObjsByMedium(string medium)
         {
-
             var client = GetHttpClient();
 
             var response = await client.GetAsync($"/public/collection/v1/search?hasImages=true&q={medium}&isOnView=true");
@@ -52,7 +51,6 @@ namespace GC_Final_Project.Models
             var mediumList = await response.Content.ReadAsAsync<MediumList.Rootobject>();
 
             return mediumList;
-
         }
 
         ////api/met/likes/{user}
@@ -63,12 +61,11 @@ namespace GC_Final_Project.Models
             return visitor.TheLikes;
         }
 
-        //api/met/addToLikes/{metOBJ}
-        public IEnumerable<TheLike> AddToLikes()
+        public async Task AddLike(TheLike newLike)
         {
             var client = GetHttpClient();
 
-            var response = await client.PostAsJsonAsync("/api/met/addToLikes",)
+            var response = await client.PostAsJsonAsync("/api/met/newLike", newLike);
         }
     }
 }
